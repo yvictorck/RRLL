@@ -2,11 +2,11 @@
 
 
 angular.module('angularPassportApp')
- .controller('Spending', function ($scope, $http, Spend, $location, $routeParams, $rootScope) {
+ .controller('SpendingCtrl', function ($scope, $http, Spending, $location, $routeParams, $rootScope) {
 
 
 
-Spend.get().success(function(data) {  $scope.tagline = data });
+  $scope.tagline = Spending.get() ;
 
 
 

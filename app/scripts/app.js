@@ -65,7 +65,7 @@ angular.module('angularPassportApp', [
 
     // On catching 401 errors, redirect to the login page.
     $rootScope.$on('event:auth-loginRequired', function() {
-      $location.path('/login');
+      // $location.path('/login');
       return false;
     });
   })
