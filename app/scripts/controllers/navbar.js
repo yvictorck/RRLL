@@ -2,12 +2,20 @@
 
 angular.module('angularPassportApp')
   .controller('NavbarCtrl', function ($scope, Auth, $location) {
-    $scope.menu = [{
+    $scope.menu = [
+    {
       "title": "Blogs",
       "link": "blogs"
-    }];
+    },
+    {
+      "title":"Blitz",
+      "link":"blitz"
+    }
 
-    $scope.authMenu = [{
+    ];
+
+    $scope.authMenu = [
+    {
       "title": "Create New Blog",
       "link": "blogs/create"
     }];

@@ -1,0 +1,260 @@
+<div class="jumbotron text-center" >
+	<h2>Nice little Blitz</h2>
+
+	<p>{{ tagline }}</p>
+
+  <!--  -->
+  <div class="row">
+    <div class="col-md-10" style="margin-top:30px;">
+
+<!--       <div ng-repeat="score1 in currentblitz.kyung">
+        <p>{{score1}}</p>
+      </div>
+      <p><b>kyung: {{currentblitz.kyung_total}}</b></p>
+
+      <div ng-repeat="score1 in currentblitz.mina">
+        <p>{{score1}}</p>
+      </div>
+      <p><b>mina: {{currentblitz.mina_total}}</b></p>
+
+      <div ng-repeat="score1 in currentblitz.jess">
+        <p>{{score1}}</p>
+      </div>
+      <p><b>jess: {{currentblitz.jess_total}}</b></p>
+
+      <div ng-repeat="score1 in currentblitz.vic">
+        <p>{{score1}}</p>
+      </div>
+       <p><b>vic: {{currentblitz.vic_total}}</b></p> -->
+     <!--  <table class="table table-hover">
+
+          <tbody >
+            <tr>
+            <td class="testing"><b>Current Game</b></td>
+            </tr>
+            <tr >
+               <td>test1</td>
+               <td>{{test.t1}}</td>
+               <td data-ng-repeat="score1 in test.t1">{{score1}}</td>
+               <td ><b>{{test.t1.length}}</b></td>
+
+            </tr>
+            <tr >
+               <td>test2</td>
+               <td>{{test.t2}}</td>
+
+               <td data-ng-repeat="score1 in test.t2">{{score1}}</td>
+
+
+               <td ><b>{{test.t2.length}}</b></td>
+
+            </tr>
+
+          </tbody>
+          
+      </table> -->
+
+      <table class="table table-hover" style="font-size:250%;">
+
+          <tbody >
+            <tr>
+            <td class="success"><b>Current Game</b></td>
+            </tr>
+            <tr >
+               <td>kyung</td> <td ng-repeat="score in currentblitz.kyung track by $index">{{score}}</td>
+<!-- 
+               <td>kyung</td> 
+               <td>{{currentblitz.kyung}}</td> -->
+               <td ><b>{{currentblitz.kyung_total}}</b></td>
+               <!-- <td ><b>{{currentblitz.kyung.length}}</b></td> -->
+            </tr>
+            <tr >
+               <td>mina</td> <td ng-repeat="score in currentblitz.mina track by $index">{{score}}</td>
+
+<!--                <td>mina</td> 
+               <td>{{currentblitz.mina}}</td> -->
+               <td ><b>{{currentblitz.mina_total}}</b></td>
+               <!-- <td ><b>{{currentblitz.mina.length}}</b></td> -->
+
+            </tr>
+            <tr >
+               <td>jess</td> <td ng-repeat="score in currentblitz.jess track by $index">{{score}}</td>
+<!--             
+               <td>jess</td> 
+               <td>{{currentblitz.jess}}</td> -->
+               <td ><b>{{currentblitz.jess_total}}</b></td>
+               <!-- <td ><b>{{currentblitz.jess.length}}</b></td> -->
+            </tr>
+            <tr >
+               <td>vic</td> <td ng-repeat="score in currentblitz.vic track by $index">{{score}}</td>
+<!--                <td>vic</td> 
+               <td>{{currentblitz.vic}}</td> -->
+               <td ><b>{{currentblitz.vic_total}}</b></td>
+               <!-- <td ><b>{{currentblitz.vic.length}}</b></td> -->
+            </tr>
+          </tbody>
+          
+      </table>
+
+
+
+
+      <table class="table table-hover" style="font-size:150%;">
+            <tr>
+            <td class="danger"><b>Past Games</b></td>
+            </tr>
+
+          <tbody ng-repeat="blitzpost in blitzposts | reverse">
+      <tr>
+      <td class="info">{{blitzpost.gametime}}</td>
+      </tr>
+            <tr >
+               <td>kyung</td> <td ng-repeat="score in blitzpost.kyung  track by $index">{{score}}</td>
+                <!-- <td>kyung</td><td >{{blitzpost.kyung}}</td> -->
+               <td ><b>{{blitzpost.kyung_total}}</b></td>
+            </tr>
+            <tr >
+               <td>mina</td> <td ng-repeat="score in blitzpost.mina  track by $index">{{score}}</td>
+               <td ><b>{{blitzpost.mina_total}}</b></td>
+
+            </tr>
+            <tr >
+               <td>jess</td> <td ng-repeat="score in blitzpost.jess  track by $index">{{score}}</td>
+               <td ><b>{{blitzpost.jess_total}}</b></td>
+
+            </tr>
+            <tr >
+               <td>vic</td> <td ng-repeat="score in blitzpost.vic  track by $index">{{score}}</td>
+               <td ><b>{{blitzpost.vic_total}}</b></td>
+
+            </tr>
+          </tbody>
+      </table>
+
+
+
+        <div style="margin-top:30px;" ng-repeat="blitzpost in blitzposts | reverse">
+          <p>Game Time: {{blitzpost.gametime}}</p>
+          <p>Kyung: {{blitzpost.kyung}} Total: {{blitzpost.kyung_total}}</p>
+          <p>Mina: {{blitzpost.mina}} Total: {{blitzpost.mina_total}}</p>
+          <p>Jess: {{blitzpost.jess}} Total: {{blitzpost.jess_total}}</p>
+          <p>Vic: {{blitzpost.vic}} Total: {{blitzpost.vic_total}}</p>
+          <p>-------------------------------------</p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="col-md-2" style="margin-top:30px;">
+      <!-- <form ng-submit="enter_one_round_blitz()"> -->
+        <h3>Add a blitz round</h3>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="kyung"
+          ng-model="kyung_one_round"></input>
+          <input type="text"
+          class="form-control"
+          placeholder="mina"
+          ng-model="mina_one_round"></input>
+          <input type="text"
+          class="form-control"
+          placeholder="jess"
+          ng-model="jess_one_round"></input>
+          <input type="text"
+          class="form-control"
+          placeholder="vic"
+          ng-model="vic_one_round"></input>
+        </div>
+
+
+        <button type="submit" class="btn btn-info" ng-click="enter_one_round_blitz()">enter one round</button>
+      <!-- </form> -->
+       <h3>Change a blitz round</h3>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="which round"
+          ng-model="which_round"></input>
+          <input type="text"
+          class="form-control"
+          placeholder="kyung"
+          ng-model="kyung_change_one_round"></input>
+          <input type="text"
+          class="form-control"
+          placeholder="mina"
+          ng-model="mina_change_one_round"></input>
+          <input type="text"
+          class="form-control"
+          placeholder="jess"
+          ng-model="jess_change_one_round"></input>
+          <input type="text"
+          class="form-control"
+          placeholder="vic"
+          ng-model="vic_change_one_round"></input>
+        </div>
+
+
+        <button type="submit" class="btn btn-info" ng-click="change_one_round_blitz()">change one round</button>
+    </div>
+
+
+    <div class="col-md-2" style="margin-top:30px;">
+      <form ng-submit="createBlitz()">
+        <!-- <h3>Submit game result to DB</h3> -->
+        <div class="form-group">
+          <input type="text"
+            class="form-control"
+            placeholder="comment"
+            ng-model="gametime"></input>
+        </div>
+        <!-- <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="kyung"
+          ng-model="kyung"></input>
+        </div>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="mina"
+          ng-model="mina"></input>
+        </div>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="jess"
+          ng-model="jess"></input>
+        </div>
+        <div class="form-group">
+          <input type="text"
+          class="form-control"
+          placeholder="vic"
+          ng-model="vic"></input>
+        </div> -->
+        <button type="submit" class="btn btn-primary">Submit to db</button>
+      </form>
+
+  <!-- <p style="margin-top:30px;">Search: <input ng-model="searchText"></p>
+
+
+
+          <div style="margin-top:30px;" ng-repeat="blitzpost in blogposts | filter:searchText", ng-show="searchText">
+          <p>Result Title: {{blitzpost.title}}</p>
+          <p>Result Content: {{blitzpost.content}}</p>
+          <p>===============================</p>
+
+        </div> -->
+
+
+    </div>
+  
+
+
+
+
+  </div>
+
+</div>
