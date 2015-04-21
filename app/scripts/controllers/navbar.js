@@ -18,7 +18,13 @@ angular.module('angularPassportApp')
     {
       "title": "Create New Blog",
       "link": "blogs/create"
-    }];
+    },
+    {
+      "title": "Sending",
+      "link": "spending"
+    }
+
+    ];
 
     $scope.logout = function() {
       Auth.logout(function(err) {

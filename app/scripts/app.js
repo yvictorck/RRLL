@@ -42,6 +42,10 @@ angular.module('angularPassportApp', [
         templateUrl: 'partials/blitz.html',
         controller: 'BlitzCtrl'
       })
+      .when('/spending',{
+        templateUrl: 'partials/spending.html',
+        controller: 'SpendingCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -61,7 +65,7 @@ angular.module('angularPassportApp', [
 
     // On catching 401 errors, redirect to the login page.
     $rootScope.$on('event:auth-loginRequired', function() {
-      // $location.path('/');
+      $location.path('/login');
       return false;
     });
   })
