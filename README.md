@@ -1,5 +1,6 @@
-Angular-Passport
+RRLL
 ================
+express 3.x
 
 An AngularJS application that uses Express, Passport, MongoDB. Demonstrating: 
 
