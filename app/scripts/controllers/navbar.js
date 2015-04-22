@@ -20,7 +20,7 @@ angular.module('angularPassportApp')
       "link": "blogs/create"
     },
     {
-      "title": "Sending",
+      "title": "Spending",
       "link": "spending"
     }
 
